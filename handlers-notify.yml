@@ -1,0 +1,35 @@
+---
+ - hosts: ubuntu
+   become: yes
+   tasks:
+    - name: installing apache2 on ubuntu hosts
+      apt: name=apache2 state=present
+      notify:
+       - service restarted apache2
+    - name: deployment on ubuntu
+      copy:
+        src: ~/index.html
+        dest: /var/www/html
+ - hosts: rhel
+   become: yes
+   tasks:
+    - name: installing httpd on rhel hosts
+      yum: name=httpd state=present
+      notify:
+       - service restarted httpd
+    - name: deployment on rhel
+      copy:
+        src: ~/index.html
+        dest: /var/www/html
+   handlers:
+    - name: service restarted apache2       
+      service: 
+       name: apache2 
+       state: restarted
+    - name: service restarted httpd
+      service: 
+       name: httpd
+       state: restarted
+...
+
+

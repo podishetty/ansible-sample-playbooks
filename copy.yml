@@ -1,0 +1,10 @@
+---
+ - hosts: all
+   become: yes
+   tasks:
+    - name: copying file to master to nodes
+      copy:
+        src: /tmp/file99
+        dest: /tmp/file02
+...
+        

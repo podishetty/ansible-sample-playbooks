@@ -1,0 +1,8 @@
+---
+- hosts: all
+  tasks:
+   - name: creating a dir
+     file:
+      path: /home/ansible/dir1
+      state: directory
+...

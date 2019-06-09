@@ -1,0 +1,8 @@
+---
+ - hosts: all
+   tasks:
+     - name: deleting file
+       file:
+         path: /home/ansible/file4
+         state: absent
+...     

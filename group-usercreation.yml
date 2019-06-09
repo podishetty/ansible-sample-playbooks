@@ -1,0 +1,9 @@
+---
+ - hosts: all
+   become: yes
+   tasks:
+     - name: group creation
+       group: name=dev01
+     - name: user creation
+       user: name=prem passwd=prem123
+...

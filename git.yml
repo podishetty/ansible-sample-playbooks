@@ -1,0 +1,10 @@
+--- 
+ - hosts: ubuntu
+   tasks:
+   - name: install git on ubuntu
+     apt: 
+      name: git 
+      state: present 
+      update_ccahe: yes
+     
+

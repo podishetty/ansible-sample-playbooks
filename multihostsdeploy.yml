@@ -1,0 +1,33 @@
+## installing apache2 on ubuntu hosts and httpd on rhel hosts using playbooks
+---
+ - hosts: rhel
+   become: yes
+   tasks:
+    - name: installing httpd in rhel
+      yum:
+         name: httpd
+         state: present
+    - name: service restatring
+      service:
+         name: httpd
+         state: restarted
+    - name: deploying httpd
+      copy:
+         src: ~/index.html
+         dest: /var/www/html
+ - hosts: ubuntu
+   become: yes
+   tasks:
+     - name: installing apache2 on ubuntu
+       apt:
+         name: apache2
+         state: present
+     - name: service restatring
+       service:
+         name: apache2
+         state: restarted
+     - name: deploying apache2
+       copy:
+         src: ~/index.html
+         dest: /var/www/html
+
