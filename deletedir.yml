@@ -1,3 +1,4 @@
+# deleting directory on remote server
 ---
  - hosts: all
    tasks:

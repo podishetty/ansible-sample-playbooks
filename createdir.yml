@@ -1,3 +1,4 @@
+#creating a directory on remote servers
 ---
 - hosts: all
   tasks:

@@ -1,3 +1,4 @@
+#copying file99 from master to file02 on remote server
 ---
  - hosts: all
    become: yes

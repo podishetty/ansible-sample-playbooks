@@ -1,3 +1,5 @@
+# create ndex.html file on master and install apache2 and deploy with node ip address 
+# text shoul de deployed.
 --- 
  - hosts: ubuntu
    become: yes
